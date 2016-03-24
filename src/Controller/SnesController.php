@@ -9,38 +9,42 @@
 namespace RicardoFiorani\TwitchPHPlays\Controller;
 
 
+use RicardoFiorani\TwitchPHPlays\Adapter\AdapterInterface;
+
 class SnesController
 {
-    private $shell;
-
     private $keyMapTranslation = [
-        'up' => '{UP}',
-        'down' => '{DOWN}',
-        'left' => '{LEFT}',
-        'right' => '{RIGHT}',
+        'up' => 'Up',
+        'down' => 'Down',
+        'left' => 'Left',
+        'right' => 'Right',
         'y' => 's',
         'x' => 'd',
         'b' => 'x',
         'a' => 'c',
         'select' => 'q',
-        'start' => '{ENTER}',
+        'start' => 'VK_Enter',
         'l' => 'w',
         'r' => 'e',
     ];
+    /**
+     * @var AdapterInterface
+     */
+    private $adapter;
 
     /**
      * ControllerRunner constructor.
+     * @param AdapterInterface $adapter
      */
-    public function __construct()
+    public function __construct(AdapterInterface $adapter)
     {
-        $this->shell = new \COM("WScript.Shell");
-        $this->shell->appactivate("VisualBoyAdvance");
+        $this->adapter = $adapter;
     }
 
     public function runKey($key)
     {
         $translatedKey = $this->translate($key);
-        $this->shell->SendKeys($translatedKey);
+        $this->adapter->sendKey($translatedKey);
     }
 
     private function translate($key)

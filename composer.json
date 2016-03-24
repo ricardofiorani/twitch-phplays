@@ -20,8 +20,6 @@
         }
     },
     "scripts": {
-        "scripts": {
-            "run": "twitch-runner.php"
-        }
+        "run": "php twitch-runner.php"
     }
 }
