@@ -23,7 +23,7 @@ class SnesController
         'b' => 'x',
         'a' => 'c',
         'select' => 'q',
-        'start' => 'VK_Enter',
+        'start' => 'r',
         'l' => 'w',
         'r' => 'e',
     ];
