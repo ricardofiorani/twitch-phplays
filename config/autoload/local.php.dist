@@ -1,7 +1,37 @@
 <?php
 
 return [
-    'debug' => true,
+    'twitchbot' => [
+        'connections' => [
+            new \Phergie\Irc\Connection([
+                    'serverHostname' => 'irc.twitch.tv',
+                    'username' => 'your_username',
+                    'realname' => 'Your Real Name',
+                    'nickname' => 'your_nickname',
+                    'password' => 'oauth:your_oauth_key',
+                ]
+            ),
+        ],
+        'plugins' => [
 
-    'config_cache_enabled' => false,
+            new \Phergie\Irc\Plugin\React\AutoJoin\Plugin([
+
+                // Required: list of channels to join
+                'channels' => [
+                    '#your-channel'
+                ],
+
+                // Optional: if true, doesn't join channels until
+                // the NickServ plugin has successfully logged in
+                //'wait-for-nickserv' => true,
+
+            ]),
+
+            // If wait-for-nickserv is enabled, the NickServ plugin must also be used
+//        new Phergie\Irc\Plugin\React\NickServ\Plugin([
+            /* .... */
+//        ]),
+
+        ],
+    ],
 ];

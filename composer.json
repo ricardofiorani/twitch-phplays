@@ -18,5 +18,10 @@
         "psr-4": {
             "RicardoFiorani\\TwitchPHPlays\\": "src/"
         }
+    },
+    "scripts": {
+        "scripts": {
+            "run": "twitch-runner.php"
+        }
     }
 }
