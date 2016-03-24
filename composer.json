@@ -4,7 +4,9 @@
     "require": {
         "phergie/phergie-irc-bot-react": "^2.1",
         "phergie/phergie-irc-plugin-react-autojoin": "~2",
-        "phergie/phergie-irc-plugin-react-nickserv": "~2"
+        "phergie/phergie-irc-plugin-react-nickserv": "~2",
+        "zendframework/zend-stdlib": "~2.7",
+        "zendframework/zend-servicemanager": "^2.7.3 || ^3.0"
     },
     "authors": [
         {

@@ -6,14 +6,14 @@
  * Time 0021
  */
 
-namespace RicardoFiorani\TwitchPHPlays\ControllerRunner;
+namespace RicardoFiorani\TwitchPHPlays\Controller;
 
 
-class ControllerRunner
+class SnesController
 {
     private $shell;
 
-    private $keyMapping = [
+    private $keyMapTranslation = [
         'up' => '{UP}',
         'down' => '{DOWN}',
         'left' => '{LEFT}',
@@ -35,19 +35,17 @@ class ControllerRunner
     {
         $this->shell = new \COM("WScript.Shell");
         $this->shell->appactivate("VisualBoyAdvance");
-
     }
 
     public function runKey($key)
     {
         $translatedKey = $this->translate($key);
         $this->shell->SendKeys($translatedKey);
-        print 'SENT KEY : ' . $translatedKey;
     }
 
     private function translate($key)
     {
-        return $this->keyMapping[$key];
+        return $this->keyMapTranslation[$key];
     }
 
 
