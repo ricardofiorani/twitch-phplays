@@ -28,7 +28,7 @@ class XdotoolInputAdapter implements AdapterInterface
 
     private function getWindowId()
     {
-        $this->windowId = shell_exec("xdotool search --onlyvisible --name " . $this->windowName);
+        $this->windowId = trim(shell_exec("xdotool search --onlyvisible --name " . $this->windowName));
     }
 
     /**
@@ -37,6 +37,6 @@ class XdotoolInputAdapter implements AdapterInterface
     public function sendKey($key)
     {
         $this->getWindowId();
-        shell_exec('xdotool key --window ' . $this->windowId . ' --delay ' . $this->delay . ' ' . $key);
+        shell_exec("xdotool key --window $this->windowId --delay $this->delay $key");
     }
 }
