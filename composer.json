@@ -1,0 +1,20 @@
+{
+    "name": "ricardofiorani/twitch-test",
+    "description": "It's just a PHP + Twitch test",
+    "require": {
+        "phergie/phergie-irc-bot-react": "^2.1",
+        "phergie/phergie-irc-plugin-react-autojoin": "~2",
+        "phergie/phergie-irc-plugin-react-nickserv": "~2"
+    },
+    "authors": [
+        {
+            "name": "Ricardo Fiorani",
+            "email": "ricardo.fiorani@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "RicardoFiorani\\TwitchPHPlays\\": "src/"
+        }
+    }
+}
