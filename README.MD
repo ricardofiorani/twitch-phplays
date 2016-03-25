@@ -9,10 +9,7 @@ Basically it runs a bot that reads a channel in Twitch IRC and allows the users 
 Because most of them is in Python with some JS like Node, so this one is to show that PHP can do it too !
 
 ## Can I use it ?
-It's not ready yet. (sorry)
-
-## Can I test it and find some issue or even make a PR ?
-Sure !
+Yesssss!!!!1
 
 ## What controllers does it supports ?
 Currently only Snes controller.
